@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import requests
-"""   """
+"""
+module concerning count of subreddit
+"""
 def number_of_subscribers(subreddit):
     url = "https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agent": "python:subreddit.subscriber.count:v1.0"}
