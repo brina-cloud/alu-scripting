@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """ Module that queries the Reddit API and returns the top ten hot posts"""
-import requests
+from wsgiref import headers
 
+import requests
+    
 
 def top_ten(subreddit):
     """ Queries the reddit api and returns the top ten hot posts """
@@ -11,7 +13,7 @@ def top_ten(subreddit):
     if r.status_code != 200:
         return None
     info = r.json()['data']['children']
-    for post in info:
-        print(post['data']['title'])
     if info is None:
         return None
+    for post in info:
+        print(post['data']['title'])
