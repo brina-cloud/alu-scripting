@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-"""python3 -c 'print(__import__("my_module").__doc__)'"""
+""" Module that queries the Reddit API and returns the number of subscribers"""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """python3 -c 'print(__import__("my_module").__doc__)'"""
+    """Queries the Reddit API and returns the number of subscribers for a given subreddit."""
 
     url = "https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agent": "python:subreddit.subscriber.count:v1.0"}
-    r = response.get(url, headers=headers, allow-redirects="False")
-    if response.status != 200:
+    r = requests.get(url, headers=headers, allow_redirects=False)
+    if r.status_code != 200:
     	return 0
-    data = r.json()
-    return (data.get("data", {}).get("subscribers", 0)
+    info = r.json()
+    return (info.get("data", {}).get("subscribers", 0))
+
 
