@@ -13,3 +13,5 @@ def top_ten(subreddit):
     info = r.json()['data']['children']
     for post in info:
         print(post['data']['title'])
+    if info is None:
+        return None
